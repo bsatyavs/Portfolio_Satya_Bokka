@@ -451,3 +451,12 @@ details {
         display: block;
     }
 }
+/* Main Headings (Olive Green) */
+h1, h2, h3, h4, .section-title {
+    color: #708238 !important; /* Olive Green */
+}
+
+/* Subheadings (Pale Green) */
+strong {
+    color: #a8cfa0 !important;  /* Pale Green */
+}
