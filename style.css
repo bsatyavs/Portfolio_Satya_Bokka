@@ -1,5 +1,4 @@
-/* Global Reset */
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,16 +24,6 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
-}
-
-ul {
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-li {
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
 }
 
 section {
@@ -64,9 +53,9 @@ section {
     cursor: default;
     transition: 0.3s ease;
 }
-.logo:hover {
-    transform: scale(1.05);
-}
+    .logo:hover {
+        transform: scale(1.05);
+    }
 
 .navbar a {
     font-size: 1rem;
@@ -75,10 +64,11 @@ section {
     font-weight: 400;
     transition: 0.3s ease-in-out;
 }
-.navbar a:hover,
-.navbar a.active {
-    color: var(--text-color);
-}
+
+    .navbar a:hover,
+    .navbar a.active {
+        color: var(--text-color);
+    }
 
 #menu-icon {
     font-size: 1.6rem;
@@ -208,27 +198,256 @@ details {
     details[open] .about-details {
         padding-top: 10px;
     }
-.projects ul {
-    background-color: var(--snd-bg-color);
-    border-left: 4px solid var(--main-color);
-    padding: 1rem;
-    border-radius: 1rem;
-}
-.projects li {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    font-size: 1rem;
-    line-height: 1.6;
+
+/*    Acedimic*/
+
+.services-container {
+    display: flex;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    gap: 2rem;
+    padding-bottom: 1rem; 
 }
 
-.subsection {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: rgba(213, 253, 249, 0.05);
-    border-radius: 10px;
+    .services-container::-webkit-scrollbar {
+        display:none;
+    }
+
+    .services-container::-webkit-scrollbar-thumb {
+        background-color: #ccc; /* Scrollbar thumb color */
+        border-radius: 4px;
+    }
+
+    .services-container .services-box {
+        flex: 0 0 calc(33.33% - 2rem); 
+        background: #6995e8;
+        padding: 1rem 1rem 1rem;
+        border-radius: 2rem;
+        text-align: center;
+        border: .3rem solid var(--bg-color);
+        transition: border-color 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        box-sizing: border-box;
+        scroll-snap-align: start; /* Optional: Snap alignment */
+    }
+
+        .services-container .services-box:hover {
+            border-color: var(--main-color);
+            transform: scale(1.05);
+            background-color: #5e86d4;
+            color: var(--bg-color);
+        }
+
+.services-box h3 {
+    font-size: 1rem;
+    color: #1a0852;
+    transition: color 0.3s ease;
 }
-.subsection h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--main-color);
+
+.services-box:hover h3 {
+    color: var(--bg-color);
+}
+
+.services-box p {
+    font-size: 1rem;
+    margin: 1rem 0 3rem;
+    transition: color 0.3s ease;
+}
+
+.services-box:hover p {
+    color: var(--bg-color);
+}
+.services-box img {
+    max-width: 12rem;
+    height: 7rem;
+}
+/*contact*/
+
+.contact {
+    background-color: var(--bg-color);
+}
+
+    .contact h2 {
+        margin-bottom: 3rem;
+        color: var(--main-color);
+    }
+
+    .contact form {
+        max-width: auto;
+        margin: 1rem auto;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+        .contact form .input-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1rem;
+        }
+
+            .contact form .input-box input,
+            .contact form textarea {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+                color: var(--text-color);
+                background: var(--bg-color);
+                border-radius: 0.8rem;
+                border: 0.25rem solid var(--main-color);
+                margin: 0.7rem 0;
+                resize: none;
+                height: 5rem;
+            }
+
+            .contact form .input-box input {
+                width: 80%;
+                margin: 0.7rem 0.35rem;
+            }
+
+        .contact form .btn {
+            margin-top: 2rem;
+        }
+
+/* BreakPoint */
+
+@media (max-width:1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width:991px) {
+    .header {
+        padding: 1rem 3%;
+    }
+
+    section {
+        padding: 1rem 3%;
+    }
+
+    .Academic {
+        padding: 3rem
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width:786px) {
+    #menu-icon {
+        font-size: 1.6rem;
+        color: var(--bg-color);
+        cursor: pointer;
+        display: none;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 255px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--main-color);
+        transition: all 0.5s ease;
+        backdrop-filter: blur(10px);
+    }
+
+        .navbar a {
+            display: block;
+            padding: 5px;
+            font-size: 22px;
+        }
+
+        .navbar.active {
+            right: 0;
+        }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content {
+        order: 2;
+        margin-left: 1rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+
+    .about-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .services h2 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width:617px) {
+    .home-img img {
+        width: 70vw;
+        margin-top: 8rem;
+    }
+
+    .about-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .about {
+        font-size: 1.5rem;
+    }
+    .home p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:450px) {
+    .Academic .services-container {
+        padding-top: 5rem;
+        font-size: 2rem;
+    }
+     .services-container .services-box {
+            flex: 0 0 calc(50% - 1rem);
+            background: #6995e8;
+            padding: 1rem 1rem 1rem;
+            border-radius: 2rem;
+            text-align: center;
+            border: .3rem solid var(--bg-color);
+            transition: border-color 0.3s ease, transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            box-sizing: border-box;
+            scroll-snap-align: center;
+            font: 1rem;
+        }
+    .about {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 5rem 1%;
+    }
+    #menu-icon {
+        display: block;
+    }
 }
