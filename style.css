@@ -11,9 +11,9 @@
 }
 
 :root {
-    --bg-color: #000;
+    --bg-color: #f5f5dc;
     --snd-bg-color: #d5fdf9;
-    --text-color: #F5F5DC;
+    --text-color: #000;
     --main-color: #6995e8;
 }
 
@@ -23,7 +23,7 @@ html {
 }
 
 body {
-    background: var(--bg-color);
+    background-color: var(--bg-color);
     color: var(--text-color);
 }
 
@@ -192,9 +192,19 @@ span {
 }
 .projects li {
     margin-bottom: 1rem;
-    color: var(--bg-color);
+    color: var(--text-color);
     font-size: 1rem;
     line-height: 1.6;
 }
 
-/* Other sections unchanged for brevity - keep your original styles below here */
+.subsection {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(213, 253, 249, 0.05);
+    border-radius: 10px;
+}
+.subsection h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
