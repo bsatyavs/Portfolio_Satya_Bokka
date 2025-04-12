@@ -126,17 +126,7 @@ awareness feeds, internal communications (Symphony equivalent)</li>
                     <li>Outlined a drainage optimization strategy that mitigated flood recurrence across 1 urban sector.</li>
                 </ul>
             </li>
-            <li>
-                <strong>Groundwater Vulnerability Mapping – New York State</strong><br>
-                <img src="assets/B1.jpg" alt="Groundwater Image 1" style="max-width: 100%; margin-top: 10px;">
-                <img src="assets/B2.jpg" alt="Groundwater Image 2" style="max-width: 100%; margin-bottom: 10px;">
-                <ul>
-                    <li>Demonstrated application of environmental risk analysis and geospatial intelligence for resource resilience and emergency planning.</li>
-                    <li>Ranked 6 hydrogeological parameters with AHP weights (1/6 to 6/6) using Python logic, achieving 100% automation of analysis workflow.</li>
-                    <li>Generated 1 detailed groundwater suitability raster spanning 54 counties, enhancing state-level planning accuracy by 33%.</li>
-                    <li>Enabled policymakers to prioritize 11 critical recharge zones for long-term aquifer sustainability.</li>
-                </ul>
-            </li>
+            
             <li>
                 <strong>Spatiotemporal Crime Intelligence – Chicago (2010–2023)</strong><br>
                 <img src="assets/C1.jpg" alt="Crime Image 1" style="max-width: 100%; margin-top: 10px;">
@@ -147,6 +137,7 @@ awareness feeds, internal communications (Symphony equivalent)</li>
                     <li>Analyzed 13-year crime trends to inform strategic realignment of 5 district patrol divisions.</li>
                 </ul>
             </li>
+            
             <li>
                 <strong>Post-Wildfire Structural Damage Detection – Palisade 2025</strong><br>
                 <img src="assets/D1.jpg" alt="Wildfire Image 1" style="max-width: 100%; margin-top: 10px;">
@@ -157,6 +148,7 @@ awareness feeds, internal communications (Symphony equivalent)</li>
                     <li>Published real-time predictions on a Folium web map, supporting 3 emergency teams in deployment across a 46-square-mile fire perimeter.</li>
                 </ul>
             </li>
+            
             <li>
                 <strong>Urban Mobility Optimization via AI – Buffalo, NY</strong><br>
                 <img src="assets/E1.jpg" alt="Mobility Image 1" style="max-width: 100%; margin-top: 10px;">
@@ -167,6 +159,7 @@ awareness feeds, internal communications (Symphony equivalent)</li>
                     <li>Recommended 19 infrastructure adjustments to optimize route safety and walkability for future autonomous operations.</li>
                 </ul>
             </li>
+            
             <li>
                 <strong>Watershed Management Planning</strong>
                 <ul>
@@ -175,6 +168,7 @@ awareness feeds, internal communications (Symphony equivalent)</li>
                     <li>Produced detailed maps for watershed delineation, pollution hotspots, conservation priorities, and sustainable land use recommendations.</li>
                 </ul>
             </li>
+            
             <li>
                 <strong>Geospatial Modeling of Vegetation Health in Arizona: A Co-Kriging Approach</strong><br>
                 <img src="assets/F1.jpg" alt="Vegetation Image 1" style="max-width: 100%; margin-top: 10px;">
@@ -212,12 +206,12 @@ awareness feeds, internal communications (Symphony equivalent)</li>
     <h1 class="section-title" style="text-align: center; padding-bottom: 10px;">Application Study: AHP-Driven Groundwater Vulnerability Mapping</h1>
 
     <div class="Prof-Goals" style="padding: 10px">
-        <h3 style="color: #708238;">1. Problem Statement</h3>
+        <h3 style="color: #708238;">Problem Statement</h3>
         <p style="text-align: justify;">
             Groundwater is vital to New York State’s rural communities. However, challenges such as population growth, industrial activity, and climate change threaten its sustainability. Identifying potential groundwater zones is difficult due to heterogeneous subsurface conditions and multiple influencing factors. This project applies the Analytic Hierarchy Process (AHP) using Python and GIS to automate factor weighting and improve groundwater potential mapping.
         </p>
 
-        <h3 style="color: #708238;">2. Objectives</h3>
+        <h3 style="color: #708238;">Objectives</h3>
         <ul>
             <li>Evaluate factors: drainage density, soil, slope, lineament density, geology, and LULC.</li>
             <li>Automate weight calculation using AHP in Python.</li>
@@ -225,7 +219,7 @@ awareness feeds, internal communications (Symphony equivalent)</li>
             <li>Validate results with hydrogeological data and well locations.</li>
         </ul>
 
-        <h3 style="color: #708238;">3. Complete Python Code</h3>
+        <h3 style="color: #708238;">Complete Python Code</h3>
         <pre style="background-color: #f5f5f5; color: #000; padding: 10px; border-radius: 10px; overflow-x: auto; font-size: 0.9rem;">
 # Install AHPY package first (if needed)
 # pip install ahpy
@@ -314,15 +308,15 @@ print('LULC Weights:', lulc_weights)
 print('Drainage Density Weights:', drainage_density_weights)
         </pre>
 
-        <h3 style="color: #708238;">4. Interpretation & GIS Integration</h3>
+        <h3 style="color: #708238;">Interpretation & GIS Integration</h3>
         <p style="text-align: justify;">
             The resulting weights are imported into ArcGIS Pro's Raster Calculator to perform a weighted overlay. Each thematic layer (e.g., slope, land use) is multiplied by its respective AHP-derived weight to generate the final groundwater potential map.
         </p>
 
-        <h3 style="color: #708238;">5. Output Insights</h3>
+        <h3 style="color: #708238;">Output Insights</h3>
         <p><strong>Key Finding:</strong> High groundwater potential was identified in the central and northern regions of New York due to favorable geology and dense lineaments, while southern areas showed low potential due to urbanization and drainage patterns.</p>
 
-        <h3 style="color: #708238;">6. Future Enhancements</h3>
+        <h3 style="color: #708238;">Future Enhancements</h3>
         <ul>
             <li>Integrate groundwater quality, socio-economic layers, and climate factors.</li>
             <li>Apply high-resolution satellite imagery and cloud-based GIS platforms.</li>
