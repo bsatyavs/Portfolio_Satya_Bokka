@@ -65,11 +65,15 @@ section {
     font-weight: 400;
     transition: 0.3s ease-in-out;
     position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
     .navbar a:hover,
     .navbar a.active {
         color: var(--main-color);
+        background: rgba(112, 130, 56, 0.2);
+        font-weight: 600;
     }
 
 .navbar a::after {
