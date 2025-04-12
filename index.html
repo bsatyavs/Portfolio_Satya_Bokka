@@ -45,7 +45,7 @@
                 <a href="http://www.linkedin.com/in/bsv-siddhartha" target="_blank"><i class='bx bxl-linkedin'></i></a>
                 <a href="https://github.com/bsatyavs" target="_blank"><i class='bx bxl-github'></i></a>
             </div>
-            <a href="Assets/SATYA BOKKA.pdf" class="btn" download="SATYA BOKKA.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+            <a href="assets/SATYA BOKKA.pdf" class="btn" download="SATYA BOKKA.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
         </div>
     </section>
 
@@ -111,7 +111,7 @@ awareness feeds, internal communications (Symphony equivalent)</li>
     </section>
 
     <section id="academic" class="academic">
-    <h2 class="heading" style="padding-top: 20px; color: #708238; margin-bottom: 30px; font-size: 2.5em; text-align: center; text-decoration: underline; text-underline-offset: 10px;">My <span style="color: #708238;">Academic Experiences and Professional Goals</span></h2>
+    <h2 class="heading" style="padding-top: 20px; color: #708238; margin-bottom: 30px; font-size: 2.5em; text-align: center; text-decoration: underline; text-underline-offset: 10px;">My Academic Experiences and Professional Goals</h2>
 
 <!-- Academic Experiences Subsection -->
 <div class="subsection" style="margin-bottom: 40px;">
@@ -218,21 +218,21 @@ awareness feeds, internal communications (Symphony equivalent)</li>
     <h1 class="section-title" style="text-align: center; color: #708238; padding-bottom: 20px; font-weight: 600; font-size: 2.5em; text-decoration: underline; text-underline-offset: 10px;">Application Study: AHP-Driven Groundwater Vulnerability Mapping</h1>
 
     <div class="Prof-Goals" style="padding: 20px; background-color: #1a1a1a; border-radius: 8px; margin-bottom: 20px; border: 1px solid #2a2a2a;">
-        <h3 style="color: #708238; font-size: 1.1em;">Problem Statement</h3>
-        <p style="text-align: justify; color: #add8e6; line-height: 1.6;">
+        <h3 style="color: #a8cfa0; font-size: 1.1em; margin-bottom: 15px;">Problem Statement</h3>
+        <p style="text-align: justify; color: #add8e6; line-height: 1.6; margin-bottom: 20px;">
             Groundwater is vital to New York State's rural communities. However, challenges such as population growth, industrial activity, and climate change threaten its sustainability. Identifying potential groundwater zones is difficult due to heterogeneous subsurface conditions and multiple influencing factors. This project applies the Analytic Hierarchy Process (AHP) using Python and GIS to automate factor weighting and improve groundwater potential mapping.
         </p>
 
-        <h3 style="color: #708238; font-size: 1.1em;">Objectives</h3>
-        <ul>
-            <li>Evaluate factors: drainage density, soil, slope, lineament density, geology, and LULC.</li>
-            <li>Automate weight calculation using AHP in Python.</li>
-            <li>Integrate weighted layers using GIS overlay techniques.</li>
-            <li>Validate results with hydrogeological data and well locations.</li>
+        <h3 style="color: #a8cfa0; font-size: 1.1em; margin-bottom: 15px;">Objectives</h3>
+        <ul style="color: #add8e6; line-height: 1.6; margin-bottom: 20px; padding-left: 20px;">
+            <li style="margin-bottom: 10px;">Evaluate factors: drainage density, soil, slope, lineament density, geology, and LULC.</li>
+            <li style="margin-bottom: 10px;">Automate weight calculation using AHP in Python.</li>
+            <li style="margin-bottom: 10px;">Integrate weighted layers using GIS overlay techniques.</li>
+            <li style="margin-bottom: 10px;">Validate results with hydrogeological data and well locations.</li>
         </ul>
 
-        <h3 style="color: #708238; font-size: 1.1em;">Complete Python Code</h3>
-        <pre style="background-color: #f5f5f5; color: #000; padding: 10px; border-radius: 10px; overflow-x: auto; font-size: 0.9rem;">
+        <h3 style="color: #a8cfa0; font-size: 1.1em; margin-bottom: 15px;">Complete Python Code</h3>
+        <pre style="background-color: #1a1a1a; color: #add8e6; padding: 15px; border-radius: 10px; overflow-x: auto; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid #2a2a2a;">
 # Install AHPY package first (if needed)
 # pip install ahpy
 
@@ -320,23 +320,25 @@ print('LULC Weights:', lulc_weights)
 print('Drainage Density Weights:', drainage_density_weights)
         </pre>
 
-        <h3 style="color: #708238; font-size: 1.1em;">Interpretation & GIS Integration</h3>
-        <p style="text-align: justify; color: #add8e6; line-height: 1.6;">
+        <h3 style="color: #a8cfa0; font-size: 1.1em; margin-bottom: 15px;">Interpretation & GIS Integration</h3>
+        <p style="text-align: justify; color: #add8e6; line-height: 1.6; margin-bottom: 20px;">
             The resulting weights are imported into ArcGIS Pro's Raster Calculator to perform a weighted overlay. Each thematic layer (e.g., slope, land use) is multiplied by its respective AHP-derived weight to generate the final groundwater potential map.
         </p>
 
-        <h3 style="color: #708238; font-size: 1.1em;">Output Insights</h3>
-        <p><strong>Key Finding:</strong> High groundwater potential was identified in the central and northern regions of New York due to favorable geology and dense lineaments, while southern areas showed low potential due to urbanization and drainage patterns.</p>
+        <h3 style="color: #a8cfa0; font-size: 1.1em; margin-bottom: 15px;">Output Insights</h3>
+        <p style="text-align: justify; color: #add8e6; line-height: 1.6; margin-bottom: 20px;">
+            <strong style="color: #708238;">Key Finding:</strong> High groundwater potential was identified in the central and northern regions of New York due to favorable geology and dense lineaments, while southern areas showed low potential due to urbanization and drainage patterns.
+        </p>
 
-        <h3 style="color: #708238; font-size: 1.1em;">Future Enhancements</h3>
-        <ul>
-            <li>Integrate groundwater quality, socio-economic layers, and climate factors.</li>
-            <li>Apply high-resolution satellite imagery and cloud-based GIS platforms.</li>
-            <li>Explore machine learning-based ranking of features.</li>
-            <li>Publish the model as a GIS web app for stakeholder use.</li>
+        <h3 style="color: #a8cfa0; font-size: 1.1em; margin-bottom: 15px;">Future Enhancements</h3>
+        <ul style="color: #add8e6; line-height: 1.6; margin-bottom: 20px; padding-left: 20px;">
+            <li style="margin-bottom: 10px;">Integrate groundwater quality, socio-economic layers, and climate factors.</li>
+            <li style="margin-bottom: 10px;">Apply high-resolution satellite imagery and cloud-based GIS platforms.</li>
+            <li style="margin-bottom: 10px;">Explore machine learning-based ranking of features.</li>
+            <li style="margin-bottom: 10px;">Publish the model as a GIS web app for stakeholder use.</li>
         </ul>
         
-        <h3 style="color: #708238; font-size: 1.1em;">Visual Results</h3>
+        <h3 style="color: #a8cfa0; font-size: 1.1em; margin-bottom: 15px;">Visual Results</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
             <img src="./Assets/B1.jpg" alt="Groundwater Potential Map 1" style="max-width: 30%; width: 250px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
             <img src="./Assets/B2.jpg" alt="Groundwater Potential Map 2" style="max-width: 30%; width: 250px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
