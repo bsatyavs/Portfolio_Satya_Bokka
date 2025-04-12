@@ -111,9 +111,9 @@ awareness feeds, internal communications (Symphony equivalent)</li>
     <section id="academic" class="academic">
     <h2 class="heading" style="padding-top:10px">My <span>Academic Experiences and Professional Goals</span></h2>
 
- <!-- Academic Experiences Subsection -->
+<!-- Academic Experiences Subsection -->
 <div class="subsection">
-    <h3 style="color: #00ffff; margin-bottom: 1rem;">Academic Experiences</h3>
+    <h3 style="color: #708238; margin-bottom: 1rem;">Academic Experiences</h3>
     <div class="projects" style="padding: 10px">
         <ol>
             <li>
@@ -189,6 +189,7 @@ awareness feeds, internal communications (Symphony equivalent)</li>
     </div>
 </div>
 
+
     <!-- Professional Goals Subsection -->
     <div class="subsection">
         <h3 style="color: #00ffff; margin-top: 3rem; margin-bottom: 1rem;">Professional Goals</h3>
@@ -198,6 +199,8 @@ awareness feeds, internal communications (Symphony equivalent)</li>
             </p>
         </div>
     </div>
+
+<!-- Application /study -->   
 </section>
 
 
@@ -205,6 +208,129 @@ awareness feeds, internal communications (Symphony equivalent)</li>
 </body>
 </html>
 
+<section id="professional" class="about">
+    <h1 class="section-title" style="text-align: center; padding-bottom: 10px;">Application Study: AHP-Driven Groundwater Vulnerability Mapping</h1>
+
+    <div class="Prof-Goals" style="padding: 10px">
+        <h3 style="color: #708238;">1. Problem Statement</h3>
+        <p style="text-align: justify;">
+            Groundwater is vital to New York State’s rural communities. However, challenges such as population growth, industrial activity, and climate change threaten its sustainability. Identifying potential groundwater zones is difficult due to heterogeneous subsurface conditions and multiple influencing factors. This project applies the Analytic Hierarchy Process (AHP) using Python and GIS to automate factor weighting and improve groundwater potential mapping.
+        </p>
+
+        <h3 style="color: #708238;">2. Objectives</h3>
+        <ul>
+            <li>Evaluate factors: drainage density, soil, slope, lineament density, geology, and LULC.</li>
+            <li>Automate weight calculation using AHP in Python.</li>
+            <li>Integrate weighted layers using GIS overlay techniques.</li>
+            <li>Validate results with hydrogeological data and well locations.</li>
+        </ul>
+
+        <h3 style="color: #708238;">3. Complete Python Code</h3>
+        <pre style="background-color: #f5f5f5; color: #000; padding: 10px; border-radius: 10px; overflow-x: auto; font-size: 0.9rem;">
+# Install AHPY package first (if needed)
+# pip install ahpy
+
+from ahpy import Compare
+
+# Define pairwise comparisons for each factor relative to others
+lineament_density = {
+    'lineament_density': 6,
+    'geology': 5,
+    'slope': 4,
+    'soil': 3,
+    'lulc': 2,
+    'drainage_density': 1,
+}
+
+geology = {
+    'lineament_density': 6/2,
+    'geology': 5/2,
+    'slope': 4/2,
+    'soil': 3/2,
+    'lulc': 2/2,
+    'drainage_density': 1/2,
+}
+
+slope = {
+    'lineament_density': 6/3,
+    'geology': 5/3,
+    'slope': 4/3,
+    'soil': 3/3,
+    'lulc': 2/3,
+    'drainage_density': 1/3,
+}    
+
+soil = {
+    'lineament_density': 6/4,
+    'geology': 5/4,
+    'slope': 4/4,
+    'soil': 3/4,
+    'lulc': 2/4,
+    'drainage_density': 1/4,
+}
+
+lulc = {
+    'lineament_density': 6/5,
+    'geology': 5/5,
+    'slope': 4/5,
+    'soil': 3/5,
+    'lulc': 2/5,
+    'drainage_density': 1/5,
+}
+
+drainage_density = {
+    'lineament_density': 6/6,
+    'geology': 5/6,
+    'slope': 4/6,
+    'soil': 3/6,
+    'lulc': 2/6,
+    'drainage_density': 1/6,
+}
+
+# Calculate column sums for normalization
+column_totals = {
+    'lineament_density': sum([1, 6/5, 6/4, 6/3, 6/2,6/1 ]),
+    'geology': sum([5/6, 1, 5/4, 5/3, 5/2, 5/1]),
+    'slope': sum([4/6, 4/5, 1, 4/3, 4/2, 4/1]),
+    'soil': sum([3/6, 3/5, 3/4, 1, 3/2, 3/1]),
+    'lulc': sum([2/6, 2/5, 2/4, 2/3, 1, 2/1]),
+    'drainage_density': sum([1/6, 1/5, 1/4, 1/3, 1/2, 1/1]),
+}
+
+# Normalize weights for each factor
+lineament_density_weights = {key: value / column_totals[key] for key, value in lineament_density.items()}
+geology_weights = {key: value / column_totals[key] for key, value in geology.items()}
+slope_weights = {key: value / column_totals[key] for key, value in slope.items()}
+soil_weights = {key: value / column_totals[key] for key, value in soil.items()}
+lulc_weights = {key: value / column_totals[key] for key, value in lulc.items()}
+drainage_density_weights = {key: value / column_totals[key] for key, value in drainage_density.items()}
+
+# Output results
+print('Lineament Density Weights:', lineament_density_weights)
+print('Geology Weights:', geology_weights)
+print('Slope Weights:', slope_weights)
+print('Soil Weights:', soil_weights)
+print('LULC Weights:', lulc_weights)
+print('Drainage Density Weights:', drainage_density_weights)
+        </pre>
+
+        <h3 style="color: #708238;">4. Interpretation & GIS Integration</h3>
+        <p style="text-align: justify;">
+            The resulting weights are imported into ArcGIS Pro's Raster Calculator to perform a weighted overlay. Each thematic layer (e.g., slope, land use) is multiplied by its respective AHP-derived weight to generate the final groundwater potential map.
+        </p>
+
+        <h3 style="color: #708238;">5. Output Insights</h3>
+        <p><strong>Key Finding:</strong> High groundwater potential was identified in the central and northern regions of New York due to favorable geology and dense lineaments, while southern areas showed low potential due to urbanization and drainage patterns.</p>
+
+        <h3 style="color: #708238;">6. Future Enhancements</h3>
+        <ul>
+            <li>Integrate groundwater quality, socio-economic layers, and climate factors.</li>
+            <li>Apply high-resolution satellite imagery and cloud-based GIS platforms.</li>
+            <li>Explore machine learning-based ranking of features.</li>
+            <li>Publish the model as a GIS web app for stakeholder use.</li>
+        </ul>
+    </div>
+</section>
 
  <!-- Contact -->
 
