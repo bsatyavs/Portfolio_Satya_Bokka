@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,10 +10,10 @@
 }
 
 :root {
-    --bg-color: #f5f5dc;
-    --snd-bg-color: #d5fdf9;
-    --text-color: #000000;
-    --main-color: #708238; /* Olive Green */
+    --bg-color: #0a0a1a;
+    --snd-bg-color: #1a1a2a;
+    --text-color: #add8e6;
+    --main-color: #00bfff;
 }
 
 html {
@@ -41,14 +41,15 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 2rem 5%;
-    background: var(--main-color);
+    background: rgba(10, 10, 26, 0.9);
     backdrop-filter: blur(10px);
     transition: all 0.5s ease;
+    border-bottom: 1px solid var(--main-color);
 }
 
 .logo {
     font-size: 1.2rem;
-    color: var(--bg-color);
+    color: var(--text-color);
     font-weight: 700;
     cursor: default;
     transition: 0.3s ease;
@@ -59,20 +60,37 @@ section {
 
 .navbar a {
     font-size: 1rem;
-    color: var(--bg-color);
+    color: var(--text-color);
     margin-left: 3rem;
     font-weight: 400;
     transition: 0.3s ease-in-out;
+    position: relative;
 }
 
     .navbar a:hover,
     .navbar a.active {
-        color: var(--text-color);
+        color: var(--main-color);
+    }
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    transition: width 0.3s ease;
+}
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+        width: 100%;
     }
 
 #menu-icon {
     font-size: 1.6rem;
-    color: var(--bg-color);
+    color: var(--text-color);
     cursor: pointer;
     display: none;
 }
@@ -220,7 +238,7 @@ details {
 
     .services-container .services-box {
         flex: 0 0 calc(33.33% - 2rem); 
-        background: #6995e8;
+        background: var(--snd-bg-color);
         padding: 1rem 1rem 1rem;
         border-radius: 2rem;
         text-align: center;
@@ -233,8 +251,8 @@ details {
         .services-container .services-box:hover {
             border-color: var(--main-color);
             transform: scale(1.05);
-            background-color: #5e86d4;
-            color: var(--bg-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
 
 .services-box h3 {
@@ -272,10 +290,14 @@ details {
     }
 
     .contact form {
-        max-width: auto;
+        max-width: 70rem;
         margin: 1rem auto;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
+        background: var(--snd-bg-color);
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 1rem var(--main-color);
     }
 
         .contact form .input-box {
@@ -459,4 +481,10 @@ h1, h2, h3, h4, .section-title {
 /* Subheadings (Pale Green) */
 strong {
     color: #a8cfa0 !important;  /* Pale Green */
+}
+
+.navbar a.active {
+    color: #00ffff;
+    font-weight: bold;
+    border-bottom: 2px solid #00ffff;
 }
