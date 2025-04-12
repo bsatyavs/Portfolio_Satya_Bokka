@@ -10,11 +10,12 @@
     font-family: "Nunito", sans-serif;
 }
 
-:root {
+:root 
     --bg-color: #f5f5dc;
     --snd-bg-color: #d5fdf9;
     --text-color: #000;
-    --main-color: #6995e8;
+    --main-color: #88b04b;  /* Sage Green */
+
 }
 
 html {
